@@ -62,15 +62,16 @@ $(function () {
 		 * loadFeed() is asynchronous so this test will require
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
-        beforeEach(function () {
+        beforeEach(function (done) {
             loadFeed(0, function () {
                 done();
             });
         });
         // check if there is at least a single .entry element within the .feed container.
-        it('there is at least a single .entry element within the .feed container', function () {
-            expect($('.feed').length).not.toBe(0);
-        });
+        it('there is at least a single .entry element within the .feed container', function (done) {          
+            expect($('.feed .entry').length).not.toBe(0);        
+            done();
+        });  
     });
     /* new test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
@@ -91,7 +92,7 @@ $(function () {
         it(' ensures when a new feed is loaded the content actually changes', function () {
             loadFeed(2, function () {
                 feed2 = $('.feed').html();
-                expect(feed2).toBeDefined();
+                expect(feed1).toBeDefined();
                 expect(feed1).not.toEqual(feed2);
                 done();
             });
