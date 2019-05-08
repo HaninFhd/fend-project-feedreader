@@ -32,7 +32,6 @@ To run the app:
    zip file : https://github.com/HaninFhd/fend-project-feedreader/archive/master.zip
 
 2. Navigate to the index.html file in the app's directory.
-3. You can also [check it](https://haninfhd.github.io/fend-project-feedreader/) .
 
 
 # Contributing
